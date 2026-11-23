@@ -1,26 +1,116 @@
-# Foveated Vision Wiki — 第七週作業完整版（修訂）
+# Foveated Vision Wiki
 
-> 主題：從 Foveated Imaging 到 FPGA Buffer：影像資料在哪裡變少？
+### 從 Foveated Imaging 到 FPGA Buffer：智慧相機如何有效率地處理影像資料？
 
-## 公開網站四個入口
+本專案以智慧影像感測與 FPGA 硬體架構為主題，透過五篇相關研究論文建立專屬的文獻知識庫（LLM Wiki），並將研究內容整理成適合初學者閱讀的互動式 HTML 教學簡報。
 
-1. **LLM Wiki 的成果** → `docs/wiki.html`（5 篇文獻卡與關鍵字查詢）
-2. **Graph 設計與改進** → `docs/workflow.html`（V1 Graph、實際檢查與 V2 Graph）
-3. **完整版教學式簡報 V2** → `docs/slides.html`（16 頁與 ROI 互動試算）
-4. **第一版完整教學簡報 V1** → `docs/slides-v1.html`（12 頁）
+主要探討的問題是：**當影像中只有部分區域需要高解析度時，系統如何在影像取得、處理、記憶體存取及資料傳輸等階段減少不必要的資料量？**
 
-## GitHub Pages 發布
+專案結合文獻整理、AI 輔助教學內容生成、Graph 工作流程設計及實際檢查與修訂，將研究論文轉換成容易理解的教學資源。
 
-將此資料夾所有檔案放到 Repository 根目錄（**不要**放五份原始 PDF），然後前往 **Settings → Pages → Deploy from a branch → main → /docs**。首頁連結是 `https://<帳號>.github.io/<Repository>/`，若是 `<帳號>.github.io` repository 則在根網址。此處的網頁檔案都是自包含 CSS/JS，GitHub Pages 不需要額外的 build。
+## 專案內容
 
-## Wiki 的建立與程式
+網站分為四個主要部分：
 
-五篇 PDF 在私人工作環境解析共 72 頁，採頁級索引、來源 metadata 與知識卡。`knowledge/` 有五篇摘要與來源限制，`AGENTS.md` 定義使用與更新規範。`scripts/ingest_wiki.py` 可用五篇原始 PDF 再執行索引。公開頁面是**靜態可搜尋 Wiki，不提供即時 LLM API 問答**。
+### 01. LLM Wiki 的成果
 
-## 版本改善
+以五篇研究論文為知識來源，整理各篇研究的核心問題、技術架構、輸入輸出、主要貢獻與限制。
 
-V1 是 12 頁完整教學作品。V2 根據 `reports/revision-review.md` 的四類檢查，增補證據位置、教學層級、互動試算與查核練習。兩版工作流程皆見 `docs/workflow.html`。`scripts/run_graph.py` 提供可重跑的確定性驗證，而非自主 Agent 執行。
+提供關鍵字搜尋、論文來源及跨論文比較，協助讀者理解不同影像處理技術之間的關係。
 
-## 作業繳交
+[瀏覽 Wiki](docs/wiki.html)
 
-直接開啟 `reports/submission-text.md` 複製六個段落；替換發布後的 GitHub Pages 網址。操作步驟另見 `README.md` 和完整包的 `04_上傳GitHub與繳交步驟.md`。
+### 02. Graph 設計與改進
+
+展示教學簡報從文獻檢索、內容整理、產生 HTML 到品質檢查的工作流程。
+
+專案先建立 V1 Graph，完成第一版簡報，再根據實際檢查結果調整流程，於 V2 Graph 中加入：
+
+- Evidence Coverage Gate：檢查教學內容與原始文獻的對應關係。
+- Teaching Gate：檢查教學順序、概念解釋與初學者容易混淆的問題。
+- Browser Gate：確認 HTML 簡報的翻頁、互動功能及不同螢幕下的顯示。
+
+各檢查節點設有失敗時的返回路徑，讓工作流程可以針對問題重新修改與驗證。
+
+[查看 Graph 與修改原因](docs/workflow.html)
+
+### 03. 完整版教學式簡報（V2）
+
+共 16 頁，從 ROI 與 Foveated Imaging 的基本概念開始，逐步介紹五篇論文的技術原理，並透過系統架構圖、研究比較、實際情境及互動練習，說明資料量在不同處理階段如何改變。
+
+主要特色包括：
+
+- Sensor、Software、Memory、FPGA 四個資料處理層級的比較
+- 各篇研究的技術原理與資料流程
+- ROI 資料量互動試算
+- 常見觀念混淆與理解檢查
+- 原始論文參考來源
+
+[開啟 V2 教學簡報](docs/slides.html)
+
+### 04. 第一版完整簡報（V1）
+
+共 12 頁，包含研究動機、基礎概念、五篇論文介紹與技術比較。
+
+V1 保留完整的教學內容與文獻依據，作為後續檢查及改進的基礎。讀者可以比較兩個版本，了解教學結構與工作流程的調整如何改善最終成果。
+
+[開啟 V1 教學簡報](docs/slides-v1.html)
+
+## 文獻知識庫
+
+本專案使用以下五篇論文：
+
+| 論文 | 研究重點 |
+|---|---|
+| VisionMode（ICCV 2017） | 調整 Sensor Readout、ADC 精度與 ISP 流程，降低影像擷取能耗 |
+| FOVEA（ICCV 2021） | 利用非均勻影像重取樣，保留重要區域的細節 |
+| Rhythmic Pixel Regions（ASPLOS 2021） | 使用不同空間與時間解析度的區域表示，減少記憶體流量 |
+| TuMag Camera（Electronics 2021） | 使用 FPGA 重排多通道 Sensor 資料，並進行影像封裝與 ROI 輸出 |
+| D-SWIM（Journal of Imaging 2019） | 設計可動態適應不同影像尺寸的 FPGA Line Buffer |
+
+詳細的研究摘要、來源與概念整理可以在 `knowledge/` 資料夾及網站 Wiki 中查閱。
+
+## Wiki 與工作流程設計
+
+知識庫採用五篇原始 PDF 建立頁級索引，再整理成具有來源資訊的中文知識卡。
+
+`AGENTS.md` 定義知識庫的建立、檢索、引用、內容更新及查核規則。教學簡報則透過 Graph 規劃生成與檢查流程，並保留 V1、V2 的版本差異與修訂紀錄。
+
+為了讓結果可以重現，專案也包含 PDF 索引及 Graph 檢查程式。實際測試紀錄保存在 `reports/`，相關畫面截圖保存在 `evidence/`。
+
+目前公開的 Wiki 是可搜尋的靜態文獻知識庫，沒有串接即時 LLM 問答 API。Graph 的實際檢查採用 Python 程式與瀏覽器測試，並保留執行結果。
+
+## 專案架構
+
+```text
+.
+├── docs/           # 網站首頁、Wiki、Graph、V1/V2 簡報
+├── knowledge/      # 五篇論文的知識卡與文獻整理
+├── scripts/        # PDF 索引及 Graph 檢查程式
+├── prompts/        # Wiki 建置與簡報生成規則
+├── reports/        # 執行結果、修改原因及測試紀錄
+├── evidence/       # 實際執行與瀏覽器畫面
+├── data/           # 論文基本資訊
+├── AGENTS.md       # 知識庫使用與維護規範
+└── README.md
+```
+
+## 使用方式
+
+本網站使用 HTML、CSS 和 JavaScript 製作，可直接透過瀏覽器瀏覽，不需要另外安裝前端框架。
+
+建議從 `docs/index.html` 開始，依序閱讀 Wiki、Graph 設計與兩版教學簡報。
+
+若想了解生成流程的檢查方法，可以參考 `scripts/` 與 `reports/` 中的程式和執行紀錄。
+
+## 專案目的
+
+本專案希望透過 LLM Wiki 與 Graph 工作流程，探索如何將多篇技術論文整理成具有來源依據、適合教學且可以反覆檢查的內容。
+
+除了介紹影像感測與 FPGA 資料處理技術，也希望展示 AI 輔助研究整理時，如何透過文獻查核、教學品質檢查及實際操作測試，提高生成內容的可靠性與可讀性。
+
+---
+
+國立中山大學｜生成式 AI：文字與圖像生成的原理與實務
+
+第七週作業：LLM Wiki 與教學 HTML 簡報
