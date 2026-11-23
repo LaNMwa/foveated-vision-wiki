@@ -1,0 +1,47 @@
+[
+  {
+    "id": "P1",
+    "label": "VisionMode",
+    "file": "VisionMode_2017.pdf",
+    "title": "Reconfiguring the Imaging Pipeline for Computer Vision",
+    "pages": 10,
+    "layer": "Sensor / ISP",
+    "url": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Buckler_Reconfiguring_the_Imaging_ICCV_2017_paper.pdf"
+  },
+  {
+    "id": "P2",
+    "label": "FOVEA",
+    "file": "FOVEA_2021.pdf",
+    "title": "FOVEA: Foveated Image Magnification for Autonomous Navigation",
+    "pages": 10,
+    "layer": "Software image resampling",
+    "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Thavamani_FOVEA_Foveated_Image_Magnification_for_Autonomous_Navigation_ICCV_2021_paper.pdf"
+  },
+  {
+    "id": "P3",
+    "label": "RPR",
+    "file": "RPR_2021.pdf",
+    "title": "Rhythmic Pixel Regions: Multi-resolution Visual Sensing System towards High-Precision Visual Computing at Low Power",
+    "pages": 14,
+    "layer": "SoC / memory traffic",
+    "url": "https://doi.org/10.1145/3445814.3446737"
+  },
+  {
+    "id": "P4",
+    "label": "TuMag",
+    "file": "TuMag_2021.pdf",
+    "title": "FPGA Implementation of Image Ordering and Packing Algorithm for TuMag Camera",
+    "pages": 18,
+    "layer": "FPGA reorder / ROI output",
+    "url": "https://doi.org/10.3390/electronics10141706"
+  },
+  {
+    "id": "P5",
+    "label": "D-SWIM",
+    "file": "D-SWIM_2019.pdf",
+    "title": "High-Throughput Line Buffer Microarchitecture for Arbitrary Sized Streaming Image Processing",
+    "pages": 20,
+    "layer": "FPGA line buffer",
+    "url": "https://doi.org/10.3390/jimaging5030034"
+  }
+]

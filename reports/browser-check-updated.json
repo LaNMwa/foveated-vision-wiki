@@ -1,0 +1,352 @@
+{
+  "test_type": "Chromium Playwright on injected HTML; browser sandbox blocked direct file:// and localhost navigation",
+  "tested_at": "2026-11-23T14:51:27",
+  "checks": [
+    {
+      "test": "desktop load index.html",
+      "passed": true,
+      "detail": "Foveated Vision Wiki · 第七週作業完整成果"
+    },
+    {
+      "test": "four home cards in required order",
+      "passed": true,
+      "detail": "LLM Wiki 的成果 / 使用的 Graph 設計與改進 / 完整版教學式簡報（V2） / 第一版完整簡報（V1）"
+    },
+    {
+      "test": "all four navigation targets exist",
+      "passed": true,
+      "detail": "['wiki.html', 'workflow.html', 'slides.html', 'slides-v1.html']"
+    },
+    {
+      "test": "desktop load wiki.html",
+      "passed": true,
+      "detail": "LLM Wiki 的成果 | Foveated Vision Wiki"
+    },
+    {
+      "test": "wiki shows five source cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "wiki can filter source cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "desktop load workflow.html",
+      "passed": true,
+      "detail": "Graph 工作流程與修訂依據 · Foveated Vision Wiki"
+    },
+    {
+      "test": "both graph SVGs shown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "three actionable gates named",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "desktop load slides-v1.html",
+      "passed": true,
+      "detail": "V1 · 第一版完整教學 · Foveated Vision Wiki"
+    },
+    {
+      "test": "slides-v1.html page count",
+      "passed": true,
+      "detail": "12 actual slides"
+    },
+    {
+      "test": "slides-v1.html references five original papers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides-v1.html button navigation",
+      "passed": true,
+      "detail": "01 / 12 → 02 / 12"
+    },
+    {
+      "test": "slides-v1.html keyboard navigation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides-v1.html back to first page",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides-v1.html no accidental horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "desktop load slides.html",
+      "passed": true,
+      "detail": "V2 · 修訂版完整教學 · Foveated Vision Wiki"
+    },
+    {
+      "test": "slides.html page count",
+      "passed": true,
+      "detail": "16 actual slides"
+    },
+    {
+      "test": "slides.html references five original papers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides.html button navigation",
+      "passed": true,
+      "detail": "01 / 16 → 02 / 16"
+    },
+    {
+      "test": "slides.html keyboard navigation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides.html back to first page",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slides.html no accidental horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "V2 has three interactive ROI controls",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "V2 interactive sample calculation updates",
+      "passed": true,
+      "detail": "90.0% → 82.5%"
+    },
+    {
+      "test": "V2 three misconceptions have answers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "desktop JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "test": "mobile load index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "mobile homepage no page-wide overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "mobile load slides-v1.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "mobile slides-v1.html flip pages",
+      "passed": true,
+      "detail": "01 / 12 → 02 / 12"
+    },
+    {
+      "test": "mobile load slides.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "mobile slides.html flip pages",
+      "passed": true,
+      "detail": "01 / 16 → 02 / 16"
+    },
+    {
+      "test": "mobile Javascript errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "passed": 34,
+  "total": 34,
+  "slide_overflow": {
+    "slides-v1.html": [
+      {
+        "page": 1,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 2,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 3,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 4,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 5,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 6,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 7,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 8,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 9,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 10,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 11,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 12,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      }
+    ],
+    "slides.html": [
+      {
+        "page": 1,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 2,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 3,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 4,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 5,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 6,
+        "height": 782,
+        "view": 770,
+        "overflow": true
+      },
+      {
+        "page": 7,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 8,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 9,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 10,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 11,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 12,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 13,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 14,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 15,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      },
+      {
+        "page": 16,
+        "height": 770,
+        "view": 770,
+        "overflow": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "method": "Deterministic content checks on existing artifacts; no LLM API runtime invoked",
+  "graph_execution": [
+    {
+      "node": "Ingest",
+      "status": "COMPLETED",
+      "evidence": "5 PDF records; see ingest-run.md"
+    },
+    {
+      "node": "V1_Basic_Gate",
+      "status": "PASS",
+      "evidence": "First draft is a complete standalone tutorial",
+      "detail": {
+        "version": "V1",
+        "slides": 12,
+        "basic_gate": {
+          "complete_tutorial_10_or_more_slides": true,
+          "five_original_papers_referenced": true,
+          "page_specific_source_markers": true,
+          "navigation_controls_present": true,
+          "teaching_explanation_of_all_five": true
+        },
+        "advanced_gate": {
+          "four_processing_layers_explicit": false,
+          "input_output_layer_comparison": false,
+          "guided_realistic_case": false,
+          "roi_interactive_model_and_assumptions": false,
+          "misconception_self_checks": false
+        },
+        "basic_pass": true,
+        "advanced_pass": false
+      }
+    },
+    {
+      "node": "V1_Enhanced_Review",
+      "status": "REVISION_NEEDED",
+      "evidence": "Specific QA opportunities: layer map, guided example, ROI simulation, misconceptions"
+    },
+    {
+      "node": "V2_Enhanced_Gates",
+      "status": "PASS",
+      "evidence": "All advanced teaching/content features present",
+      "detail": {
+        "version": "V2",
+        "slides": 16,
+        "basic_gate": {
+          "complete_tutorial_10_or_more_slides": true,
+          "five_original_papers_referenced": true,
+          "page_specific_source_markers": true,
+          "navigation_controls_present": true,
+          "teaching_explanation_of_all_five": true
+        },
+        "advanced_gate": {
+          "four_processing_layers_explicit": true,
+          "input_output_layer_comparison": true,
+          "guided_realistic_case": true,
+          "roi_interactive_model_and_assumptions": true,
+          "misconception_self_checks": true
+        },
+        "basic_pass": true,
+        "advanced_pass": true
+      }
+    },
+    {
+      "node": "Browser_Audit",
+      "status": "SEE_SEPARATE_REPORT",
+      "evidence": "browser-check-updated.md"
+    },
+    {
+      "node": "Publish",
+      "status": "LOCAL_READY",
+      "evidence": "GitHub remote publication is user-side"
+    }
+  ]
+}
